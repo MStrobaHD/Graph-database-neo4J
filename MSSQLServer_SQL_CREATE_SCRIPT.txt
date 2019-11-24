@@ -1,0 +1,88 @@
+
+--Tworzenie węzłów:
+CREATE TABLE [Player]
+(
+ contractNO int IDENTITY (1, 1) NOT NULL ,
+ [name]       varchar(50) NOT NULL,
+ [age]       int NOT NULL  
+) AS NODE;
+GO
+
+CREATE TABLE [Position]
+(
+ [positionID] int IDENTITY (1, 1) NOT NULL ,
+ [name]       varchar(50) NOT NULL 
+) AS NODE;
+GO
+
+CREATE TABLE [Country]
+(
+ [countryID] int IDENTITY (1, 1) NOT NULL ,
+ [name]       varchar(50) NOT NULL 
+) AS NODE;
+GO
+
+CREATE TABLE [Coach]
+(
+ [coachID] int IDENTITY (1, 1) NOT NULL ,
+ [name]       varchar(50) NOT NULL 
+) AS NODE;
+GO
+
+CREATE TABLE [Competition]
+(
+ [competitionID] int IDENTITY (1, 1) NOT NULL ,
+ [name]       varchar(50) NOT NULL 
+) AS NODE;
+GO
+
+CREATE TABLE [Club]
+(
+ [clubID] int IDENTITY (1, 1) NOT NULL ,
+ [name]       varchar(50) NOT NULL 
+) AS NODE;
+GO
+--Koniec tworzenia węzłów
+
+--Tworzenie relacji/łuków
+CREATE TABLE [PLAYS_ON]
+AS EDGE;
+GO
+
+CREATE TABLE [PLAYS_FOR]
+(
+ [years]       int NOT NULL 
+)
+AS EDGE;
+GO
+
+CREATE TABLE [IS_BASED_IN]
+AS EDGE;
+GO
+
+CREATE TABLE [CAME_FROM]
+(
+ [city]     varchar(50)   NOT NULL 
+)
+AS EDGE;
+GO
+
+CREATE TABLE [WORKS_FOR]
+(
+ [years]       int NOT NULL 
+)
+AS EDGE;
+GO
+
+CREATE TABLE [REPRESENTS]
+(
+ [numberOfGames]       int NOT NULL 
+)
+AS EDGE;
+GO
+
+CREATE TABLE [PARTICIPATE]
+AS EDGE;
+GO
+--Koniec tworzenie relacji/łuków
+
